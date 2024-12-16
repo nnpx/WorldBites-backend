@@ -71,23 +71,18 @@ app.use((req, res) => {
   res.status(404).json({ message: "Not found" });
 });
 
-const cors = require("cors");
+// const cors = require("cors");
 
-const allowedOrigins = ["https://worldbites-inky.netlify.app"];
+// const allowedOrigins = ["https://worldbites-inky.netlify.app"];
 // app.use(
 //   cors({
 //     origin: allowedOrigins,
+//     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+//     credentials: true,
 //   })
 // );
-app.use(
-  cors({
-    origin: allowedOrigins,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    credentials: true,
-  })
-);
 
-app.options("*", cors());
+// app.options("*", cors());
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
